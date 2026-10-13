@@ -4,7 +4,12 @@ class Ball:
     pass
 
 class Boy:
-    pass
+    def __init__(self, x):
+        self.x = x
+        self.image = load_image("run_animation.png")
+    
+    def draw_boy(self, left, bottom):
+        self.image.clip_draw(left, bottom, 100, 100, self.x, 50)
 
 def programInit():
     pass
