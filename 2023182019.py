@@ -4,7 +4,7 @@ import random
 class Ball:
     def __init__(self, size):
         self.x = random.randint(50, 750)
-        self.y = random.randint(100, 500)
+        self.y = 599
         self.size = size
         if size == 1 : self.image = load_image("ball21x21.png")
         else : self.image = load_image("ball41x41.png")
@@ -73,6 +73,10 @@ def caculatePosition():
 
     for index in range(len(team)):
         team[index].x += 5
+
+    for index in range(len(balls)):
+        move = random.randint(3, 7)
+        if balls[index].y - move > 25 : balls[index].y -= move
 
 
 running = True
