@@ -21,6 +21,9 @@ class Boy:
     def draw_boy(self, left, bottom):
         self.image.clip_draw(left, bottom, 100, 100, self.x, 50)
 
+class Grass:
+    pass
+
 def programInit():
     global team
     global balls
