@@ -1,7 +1,17 @@
 from pico2d import *
+import random
 
 class Ball:
-    pass
+    def __init__(self, x, y, size):
+        self.x = x
+        self.y = y
+        self.size = size
+        if size == 1 : self.image = load_image("ball21x21.png")
+        else : self.image = load_image("ball41x41.gng")
+
+    def draw_ball(self):
+        if self.size == 1 : self.image.draw(41, 41)   
+        else : self.image.draw(41, 41)   
 
 class Boy:
     def __init__(self, x):
