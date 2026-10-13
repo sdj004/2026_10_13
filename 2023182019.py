@@ -34,6 +34,7 @@ def programInit():
     global team
     global balls
     global frame
+    global grass
 
     frame = 0
     team = []
@@ -47,6 +48,8 @@ def programInit():
         size = random.randint(0, 1)
         ball = Ball(size)
         balls.append(ball)
+
+    grass = Grass()
 
 def handle_events():
     global running
@@ -62,12 +65,15 @@ def handle_events():
 def drawScene():
     global team
     global balls
+    global grass
 
     for index in range(len(team)):
         team[index].draw_boy(left, bottom)
 
     for index in range(len(balls)):
         balls[index].draw_ball()
+
+    grass.draw_grass()
 
 def caculatePosition():
     global left
