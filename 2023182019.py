@@ -10,8 +10,8 @@ class Ball:
         else : self.image = load_image("ball41x41.png")
 
     def draw_ball(self):
-        if self.size == 1 : self.image.draw(41, 41)   
-        else : self.image.draw(41, 41)   
+        if self.size == 1 : self.image.draw(self.x, self.y, 21, 21)   
+        else : self.image.draw(self.x, self.y, 41, 41)   
 
 class Boy:
     def __init__(self):
@@ -22,8 +22,12 @@ class Boy:
         self.image.clip_draw(left, bottom, 100, 100, self.x, 50)
 
 def programInit():
+    global team
+    global balls
+
     team = []
     balls = []
+
     for _ in range(11):
         boy = Boy()
         team.append(boy)
@@ -45,7 +49,19 @@ def handle_events():
             running = False
 
 def drawScene():
-    pass
+    global team
+    global balls
+
+    left = 0
+
+    bottom = 0
+
+    for index in range(len(team)):
+        team[index].draw_boy(left, bottom)
+
+    for index in range(len(balls)):
+        balls[index].draw_ball()
+
 
 running = True
 
@@ -59,6 +75,8 @@ while running:
     handle_events()
 
     drawScene()
+
+    update_canvas()
 
     delay(0.01)
 
