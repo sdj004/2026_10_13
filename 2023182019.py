@@ -22,7 +22,13 @@ class Boy:
         self.image.clip_draw(left, bottom, 100, 100, self.x, 50)
 
 class Grass:
-    pass
+    def __init__(self):
+        self.x = 400
+        self.y = 25
+        self.image = load_image("grass.png")
+
+    def draw_grass(self):
+        self.image.draw(self.x, self.y)
 
 def programInit():
     global team
