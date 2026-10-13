@@ -62,6 +62,9 @@ def drawScene():
     for index in range(len(balls)):
         balls[index].draw_ball()
 
+def caculatePosition():
+    pass
+
 
 running = True
 
@@ -71,6 +74,8 @@ programInit()
 
 while running:
     clear_canvas()
+
+    caculatePosition()
 
     handle_events()
 
