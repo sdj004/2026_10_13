@@ -19,7 +19,7 @@ class Boy:
         self.image = load_image("run_animation.png")
     
     def draw_boy(self, left, bottom):
-        self.image.clip_draw(left, bottom, 100, 100, self.x, 50)
+        self.image.clip_draw(left, bottom, 100, 100, self.x, 80)
 
 class Grass:
     def __init__(self):
@@ -67,13 +67,15 @@ def drawScene():
     global balls
     global grass
 
+    grass.draw_grass()
+
     for index in range(len(team)):
         team[index].draw_boy(left, bottom)
 
     for index in range(len(balls)):
         balls[index].draw_ball()
 
-    grass.draw_grass()
+    
 
 def caculatePosition():
     global left
@@ -90,8 +92,8 @@ def caculatePosition():
         team[index].x += 5
 
     for index in range(len(balls)):
-        move = random.randint(3, 7)
-        if balls[index].y - move > 25 : balls[index].y -= move
+        move = random.randint(3, 15)
+        if balls[index].y - move > (80 - 21) : balls[index].y -= move
 
 
 running = True
