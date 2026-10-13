@@ -1,6 +1,10 @@
 from pico2d import *
 
+class Ball:
+    pass
 
+class Boy:
+    pass
 
 running = True
 
