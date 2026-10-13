@@ -64,11 +64,15 @@ def caculatePosition():
     global left
     global bottom
     global frame
+    global team
 
     frame = (frame + 1) % 8
     
     bottom = 0
     left = frame * 100
+
+    for index in range(len(team)):
+        team[index].x += 5
 
 
 running = True
