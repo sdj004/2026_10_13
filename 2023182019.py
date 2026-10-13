@@ -24,7 +24,9 @@ class Boy:
 def programInit():
     global team
     global balls
+    global frame
 
+    frame = 0
     team = []
     balls = []
 
@@ -52,10 +54,6 @@ def drawScene():
     global team
     global balls
 
-    left = 0
-
-    bottom = 0
-
     for index in range(len(team)):
         team[index].draw_boy(left, bottom)
 
@@ -63,7 +61,14 @@ def drawScene():
         balls[index].draw_ball()
 
 def caculatePosition():
-    pass
+    global left
+    global bottom
+    global frame
+
+    frame = (frame + 1) % 8
+    
+    bottom = 0
+    left = frame * 100
 
 
 running = True
@@ -83,6 +88,6 @@ while running:
 
     update_canvas()
 
-    delay(0.01)
+    delay(0.05)
 
 close_canvas()
